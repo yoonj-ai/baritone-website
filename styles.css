@@ -1722,6 +1722,11 @@ p {
 
     .hero {
         min-height: 600px;
+        margin-top: 60px;
+    }
+    
+    .hero-headline {
+        font-size: 48px;
     }
 
     .hero-background {
@@ -1783,6 +1788,14 @@ p {
     .ai-callout {
         background: #1a4a1a;
         border: 1px solid rgba(200, 200, 200, 0.3);
+    }
+    
+    .contact-email h4 {
+        font-size: 20px;
+    }
+    
+    .contact-email p {
+        font-size: 18px;
     }
 }
 

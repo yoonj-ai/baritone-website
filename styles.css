@@ -1511,7 +1511,7 @@ p {
 }
 
 .footer-offices h4 {
-    font-size: 16px;
+    font-size: var(--font-size-small);
     margin-bottom: 8px;
     margin-top: 16px;
     opacity: 0.9;
@@ -1522,7 +1522,7 @@ p {
 }
 
 .footer-offices p {
-    font-size: 16px;
+    font-size: var(--font-size-small);
     opacity: 0.7;
     line-height: 1.6;
     margin-bottom: 0;

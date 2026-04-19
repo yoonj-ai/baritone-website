@@ -1797,6 +1797,10 @@ p {
     .contact-email p {
         font-size: 18px;
     }
+    
+    .footer-tagline {
+        margin-bottom: 12px;
+    }
 }
 
 @media (max-width: 480px) {

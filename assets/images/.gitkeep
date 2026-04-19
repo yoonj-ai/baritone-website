@@ -1,0 +1,33 @@
+# Image Assets Directory
+
+Place the following images in this directory:
+
+## Required Images:
+
+1. **hero-mountain.jpg** - Hero section background
+   - Recommended size: 1920x1080px or larger
+   - Mountain landscape image for hero section
+   - Should work well with dark overlay
+
+2. **toronto-cityscape.jpg** - Contact section background
+   - Recommended size: 1920x1080px or larger
+   - Toronto cityscape/skyline image
+   - Should work well with dark overlay for form readability
+
+3. **yoonjai-shin.jpg** - Leadership photo
+   - Recommended size: 600x600px or larger
+   - Professional headshot of Yoonjai Shin
+   - Square or portrait orientation
+
+4. **ted-brown.jpg** - Leadership photo
+   - Recommended size: 600x600px or larger
+   - Professional headshot of Ted Brown
+   - Square or portrait orientation
+
+## Image Optimization Tips:
+
+- Use WebP format for better compression (with JPG fallback)
+- Optimize images before uploading (use tools like TinyPNG, ImageOptim)
+- Keep file sizes under 500KB for faster loading
+- Use descriptive filenames
+- Ensure images are high quality but web-optimized

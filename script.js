@@ -79,61 +79,39 @@ const mobileNetworkCards = document.getElementById('mobile-network-cards');
 
 const isMobile = () => window.innerWidth <= 768;
 
-// Node data
-const outerNodes = [
-    { 
-        label: 'Macro Research', 
-        description: 'Top-down analysis of global economic conditions, policy dynamics, and market cycles', 
-        angle: 0, 
-        radius: 60 
-    },
-    { 
-        label: 'Asset Allocation', 
-        description: 'Rigorous framework for positioning across asset classes, geographies, and risk factors', 
-        angle: Math.PI * 2 / 5, 
-        radius: 60 
-    },
-    { 
-        label: 'Securities Analysis', 
-        description: 'Fundamental and quantitative evaluation of individual securities across equities and fixed income', 
-        angle: Math.PI * 4 / 5, 
-        radius: 60 
-    },
-    { 
-        label: 'Manager Due Diligence', 
-        description: 'Rigorous due diligence on external managers and investment vehicles where applicable', 
-        angle: Math.PI * 6 / 5, 
-        radius: 60 
-    },
-    { 
-        label: 'Risk Oversight', 
-        description: 'Continuous portfolio-level risk monitoring with emphasis on downside protection and tail risk management', 
-        angle: Math.PI * 8 / 5, 
-        radius: 60 
-    }
-];
-
-// Initialize mobile cards - always show full descriptions, no arrows
+// Initialize mobile cards - read from desktop HTML nodes
 function initMobileCards() {
     if (!mobileNetworkCards) return;
     
     mobileNetworkCards.innerHTML = '';
     
-    outerNodes.forEach((node, index) => {
+    // Get descriptions from desktop HTML nodes
+    for (let i = 0; i < 5; i++) {
+        const desktopNode = document.getElementById(`node-${i}`);
+        if (!desktopNode) continue;
+        
+        const title = desktopNode.querySelector('h4')?.textContent || '';
+        let description = desktopNode.querySelector('p')?.textContent || '';
+        
+        // Mobile-specific override for Manager Due Diligence
+        if (i === 3) {
+            description = 'Independent evaluation of external investment vehicles and asset managers where applicable';
+        }
+        
         const card = document.createElement('div');
         card.className = 'mobile-network-card';
         card.innerHTML = `
             <div class="mobile-card-header">
-                <div class="mobile-card-number">${index + 1}</div>
-                <h4 class="mobile-card-title">${node.label}</h4>
+                <div class="mobile-card-number">${i + 1}</div>
+                <h4 class="mobile-card-title">${title}</h4>
             </div>
             <div class="mobile-card-content">
-                <p class="mobile-card-description">${node.description}</p>
+                <p class="mobile-card-description">${description}</p>
             </div>
         `;
         
         mobileNetworkCards.appendChild(card);
-    });
+    }
 }
 
 // Create SVG connectors with orthogonal paths

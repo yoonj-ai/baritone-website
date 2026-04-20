@@ -927,14 +927,14 @@ p {
     gap: var(--spacing-sm);
 }
 
-.mobile-network-card {
-    background: rgba(28, 31, 36, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
+    .mobile-network-card {
+        background: rgba(28, 31, 36, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
 
 .mobile-network-card.expanded {
     background: rgba(28, 31, 36, 0.8);
@@ -1071,6 +1071,7 @@ p {
     padding-bottom: 0;
 }
 
+
 .tab-button {
     padding: 16px 0;
     background: none;
@@ -1095,6 +1096,28 @@ p {
     color: var(--color-primary);
     border-bottom-color: var(--color-primary);
     font-weight: 600;
+}
+
+/* Desktop: Thicker active tab underline with fade-in animation */
+@media (min-width: 768px) {
+    .tab-button {
+        border-bottom-width: 3px;
+    }
+    
+    .tab-button.active {
+        animation: tabFadeIn 0.3s ease-in;
+    }
+}
+
+@keyframes tabFadeIn {
+    from {
+        opacity: 0;
+        border-bottom-color: transparent;
+    }
+    to {
+        opacity: 1;
+        border-bottom-color: var(--color-primary);
+    }
 }
 
 .tab-content {
@@ -1139,6 +1162,25 @@ p {
 .strategy-card h3 {
     font-size: var(--font-size-h4);
     margin-bottom: var(--spacing-xs);
+}
+
+/* Desktop enhancements for strategy cards */
+@media (min-width: 768px) {
+    .strategy-card {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+    
+    .strategy-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+    }
+    
+    .strategy-card h3 {
+        font-size: 26px;
+        letter-spacing: 0.3px;
+    }
 }
 
 .strategy-type {
@@ -1768,7 +1810,7 @@ p {
     .tab-button {
         flex: 1;
         padding: 12px 8px;
-        font-size: 14px;
+        font-size: 16px;
     }
     
     .network-diagram-container {
